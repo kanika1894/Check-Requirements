@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - run: |
-        npm ci
-        npm run all
+    - name: Hello world action step
+      id: hello
+      uses: ishitachawla/Check-Requirements@v1.1
+      with:
+        path: 'ishitachawla/Check-Requirements'
+
+    - name: Get the output 
+      run: echo "The time was ${{ steps.hello.outputs.cool }}"
