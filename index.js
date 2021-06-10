@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-import fs from 'fs'
+const fs = require('fs');
 const filePath = core.getInput('path')
 fs.readdir(filePath, (err, files) => {
     if (err)
