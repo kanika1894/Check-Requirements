@@ -1,0 +1,23 @@
+name: 'File Existence and Reader'
+description: 'Check existence and read'
+branding:
+  icon: 'file-text'
+  color: 'blue'
+inputs:
+  path:
+    description: 'The path to the file to be read.'
+    required: true
+  allow_failure:
+    description: 'Makes the Action fail on missing files.'
+    default: false
+    required: false
+  encoding:
+    description: 'The encoding of the file.'
+    default: 'utf8'
+    required: false
+outputs:
+  contents:
+    description: 'The file contents.'
+runs:
+  using: 'node12'
+  main: 'index.js'
