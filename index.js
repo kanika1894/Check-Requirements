@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const module = require('module');
 const fs = require('fs');
 const module = require('module');
 const filePath = core.getInput('path')
