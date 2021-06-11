@@ -9,6 +9,7 @@ fs.readdir(__dirname, (err, files) => {
     else {
         console.log("first if");
         const includesReadme = files.includes('Readme.md');
+        console.log(includesReadme);
         if(includesReadme){
             console.log("second if");
             $.get(filePath, function(contents){
