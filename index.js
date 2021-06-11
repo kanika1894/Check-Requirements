@@ -12,7 +12,7 @@ fs.readdir(__dirname, (err, files) => {
         for(let i = 0; i < files.length; i++){
             console.log(files[i]);
           }
-        const includesReadme = files.includes('Readme.md');
+        const includesReadme = files.includes('README.md');
         console.log(includesReadme);
         if(includesReadme){
             console.log("second if");
