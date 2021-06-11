@@ -17,7 +17,7 @@ inputs:
     default: 'utf8'
     required: false
 outputs:
-  contents:
+  cool:
     description: 'The file contents.'
 runs:
   using: 'node12'
