@@ -4,7 +4,7 @@ const fs = require('fs');
 const filePath = core.getInput('path')
 fs.readdir(filePath, (err, files) => {
     if (err)
-        console.lnog(err);
+        console.log(err);
     else {
         const includesReadme = files.includes('Readme.md');
         if(includesReadme){
