@@ -16,9 +16,6 @@ inputs:
     description: 'The encoding of the file.'
     default: 'utf8'
     required: false
-outputs:
-  cool:
-    description: 'The file contents.'
 runs:
   using: 'node12'
   main: 'index.js'

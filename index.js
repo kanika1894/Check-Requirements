@@ -22,6 +22,6 @@ fs.readdir(filePath, (err, files) => {
       }
         
       }
-    core.setOutput("cool",cool);
+    console.log("cool");
     }
   )
