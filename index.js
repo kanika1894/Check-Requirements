@@ -18,8 +18,8 @@ fs.readdir('./', (err, files) => {
             console.log("second if");
             fs.readFile('./Readme.md', function (err, data) {
                 if (err) throw err;
-                if(data.includes('search string')){
-                 console.log(data)
+                if(data.includes('Example')){
+                 console.log("found example");
                 }
               });
 
