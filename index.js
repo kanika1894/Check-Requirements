@@ -7,7 +7,11 @@ fs.readdir(__dirname, (err, files) => {
     if (err)
         console.log(err);
     else {
+
         console.log("first if");
+        for(let i = 0; i < files.length; i++){
+            console.log(files[i]);
+          }
         const includesReadme = files.includes('Readme.md');
         console.log(includesReadme);
         if(includesReadme){
