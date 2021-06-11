@@ -4,9 +4,6 @@ branding:
   icon: 'file-text'
   color: 'blue'
 inputs:
-  path:
-    description: 'The path to the file to be read.'
-    required: true
   allow_failure:
     description: 'Makes the Action fail on missing files.'
     default: false
