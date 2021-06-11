@@ -12,16 +12,16 @@ fs.readdir('./', (err, files) => {
         for(let i = 0; i < files.length; i++){
             console.log(files[i]);
           }
-        const includesReadme = files.includes('README.md');
+        const includesReadme = files.includes('Readme.md');
         console.log(includesReadme);
         if(includesReadme){
             console.log("second if");
-            $.get(filePath, function(contents){
-                var hasString = contents.includes("Example"); //boolean
-                if(!hasString)
-                    console.log(err);
-                else console.log("yess");
-             })
+            fs.readFile('./Readme.md', function (err, data) {
+                if (err) throw err;
+                if(data.includes('search string')){
+                 console.log(data)
+                }
+              });
 
 
       }	
