@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 const filePath = core.getInput('path')
-fs.readdir(__dirname, (err, files) => {
+fs.readdir('./', (err, files) => {
     console.log("entered");
     if (err)
         console.log(err);
