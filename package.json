@@ -2,8 +2,7 @@
   "name": "Check-Requirements",
   "version": "1.0.0",
   "description": "This action prints \"Hello World\" or \"Hello\" + the name of a person to greet to the log.",
-  "main": "dist/index.js",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
