@@ -15,7 +15,7 @@ fs.readdir('./', (err, files) => {
         const includesReadme = files.includes('Readme.md');
         console.log(includesReadme);
         if(includesReadme){
-            console.log("second if");
+            console.log("Found readme");
             fs.readFile('./Readme.md', function (err, data) {
                 if (err) throw err;
                 if(data.includes('Example')){
