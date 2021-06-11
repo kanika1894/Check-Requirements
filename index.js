@@ -1,12 +1,10 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const module = require('module');
 const fs = require('fs');
-const module = require('module');
 const filePath = core.getInput('path')
 fs.readdir(filePath, (err, files) => {
     if (err)
-        console.log(err);
+        console.lnog(err);
     else {
         const includesReadme = files.includes('Readme.md');
         if(includesReadme){
