@@ -71,4 +71,4 @@ fs.readdir('./', (err, files) => {
       }
     
     }
-  )
+})
