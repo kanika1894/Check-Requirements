@@ -70,10 +70,11 @@ fs.readdir('./', (err, files) => {
     async function start(){
       console.log("entered start");
     try{
+      console.log("entered try");
     const result = await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures',{
-      owner: 'octocat',
-      repo: 'hello-world',
-      branch: 'branch',
+    owner: 'ishitachawla',
+    repo: 'Requirement-testing',
+    branch: 'main',
     mediaType: {
       previews: [
         'zzzax'
