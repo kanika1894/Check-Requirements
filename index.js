@@ -48,8 +48,8 @@ fs.readdir('./', (err, files) => {
     //check commit protection in branch
     async function start() {
    
-      const result =   
-    await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures', {
+      const promise = new Promise((resolve, reject) => {
+      await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures', {
       owner: 'ishitachawla',
       repo: 'Requirement-testing',
       branch: 'main',
@@ -58,9 +58,10 @@ fs.readdir('./', (err, files) => {
           'zzzax'
         ]
       }
+      
     })
-    console.log(result);
-    console.log("checked commit protection");
+    .catch(reject);
+  })
   }
   start();
     //end check commit
