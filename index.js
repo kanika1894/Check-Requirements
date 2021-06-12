@@ -46,6 +46,9 @@ fs.readdir('./', (err, files) => {
     })
 
     //check commit protection in branch
+    async function start() {
+   
+      const result =   
     await octokit.request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures', {
       owner: 'ishitachawla',
       repo: 'Requirement-testing',
@@ -56,6 +59,7 @@ fs.readdir('./', (err, files) => {
         ]
       }
     })
+  }
     //end check commit
     
       }
