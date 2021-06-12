@@ -49,7 +49,7 @@ fs.readdir('./', (err, files) => {
     async function start() {
    
       const result =   
-    await octokit.request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures', {
+    await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures', {
       owner: 'ishitachawla',
       repo: 'Requirement-testing',
       branch: 'main',
