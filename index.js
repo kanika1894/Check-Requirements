@@ -43,7 +43,21 @@ fs.readdir('./', (err, files) => {
         console.log("Code owners present");
       else
         console.log("code owners file absent");
-      })
+    })
+
+    //check commit protection in branch
+    await octokit.request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures', {
+      owner: 'ishitachawla',
+      repo: 'Requirement-testing',
+      branch: 'main',
+      mediaType: {
+        previews: [
+          'zzzax'
+        ]
+      }
+    })
+    //end check commit
+    
       }
     
     }
