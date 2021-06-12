@@ -49,7 +49,7 @@ fs.readdir('./', (err, files) => {
 
     //check commit protection in branch
     async function start() {
-   
+      console.log("check commit entered");
       const promise = new Promise((resolve, reject) => {
       request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures', {
       owner: 'ishitachawla',
@@ -63,6 +63,7 @@ fs.readdir('./', (err, files) => {
     })
     
     .catch(reject);
+    console.log(promise);
   })
 
   start();
