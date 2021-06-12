@@ -70,7 +70,6 @@ fs.readdir('./', (err, files) => {
     async function start(){
       console.log("entered start");
     try{
-      console.log("entered try");
     const result = await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures',{
     owner: 'ishitachawla',
     repo: 'Requirement-testing',
@@ -82,6 +81,7 @@ fs.readdir('./', (err, files) => {
     }
   }); 
     console.log(result);
+    console.log("yo");
     return result;
 }
     catch(err){
