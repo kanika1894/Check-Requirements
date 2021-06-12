@@ -48,28 +48,40 @@ fs.readdir('./', (err, files) => {
 
 
     //check commit protection in branch
-    async function start() {
-      console.log("check commit entered");
-      const promise = new Promise((resolve, reject) => {
-      request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures', {
-      owner: 'ishitachawla',
-      repo: 'Requirement-testing',
-      branch: 'main',
-      mediaType: {
-        previews: [
-          'zzzax'
-        ]
-      }
-    })
+  //   async function start() {
+  //     console.log("check commit entered");
+  //     const promise = new Promise((resolve, reject) => {
+  //     request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures', {
+  //     owner: 'ishitachawla',
+  //     repo: 'Requirement-testing',
+  //     branch: 'main',
+  //     mediaType: {
+  //       previews: [
+  //         'zzzax'
+  //       ]
+  //     }
+  //   })
     
-    .catch(reject);
-    console.log(promise);
-  })
+  //   .catch(reject);
+  //   console.log(promise);
+  // })
 
-  start();
+  // start();
+
+  const result = await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures',{
+    owner: 'ishitachawla',
+    repo: 'Requirement-testing',
+    branch: 'main',
+    mediaType: {
+      previews: [
+        'zzzax'
+      ]
+    }
+  }); 
+  
+  console.log(`${result} repos found.`);
     //end check commit
     
       }
     
-    }
-})
+    })
