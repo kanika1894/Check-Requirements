@@ -59,6 +59,8 @@ fs.readdir('./', (err, files) => {
         ]
       }
     })
+    console.log(result);
+    console.log("checked commit protection");
   }
     //end check commit
     
