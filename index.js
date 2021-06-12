@@ -67,8 +67,9 @@ fs.readdir('./', (err, files) => {
   // })
 
   // start();
-
-  const result = await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures',{
+    async function start(){
+    try{
+    const result = await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures',{
     owner: 'ishitachawla',
     repo: 'Requirement-testing',
     branch: 'main',
@@ -78,8 +79,14 @@ fs.readdir('./', (err, files) => {
       ]
     }
   }); 
-  
+    return result;
+}
+    catch(err){
+      return "error";
+    }
+}
   console.log(`${result} repos found.`);
+  console.log(start());
     //end check commit
     
       }
