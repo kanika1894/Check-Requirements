@@ -62,11 +62,9 @@ fs.readdir('./', (err, files) => {
       }
     })
     
+    .catch(reject);
   })
-  
-  let result = await promise; 
-  console.log(result);
-  }
+
   start();
     //end check commit
     
