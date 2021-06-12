@@ -45,11 +45,13 @@ fs.readdir('./', (err, files) => {
         console.log("code owners file absent");
     })
 
+
+
     //check commit protection in branch
     async function start() {
    
       const promise = new Promise((resolve, reject) => {
-      await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures', {
+      request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures', {
       owner: 'ishitachawla',
       repo: 'Requirement-testing',
       branch: 'main',
@@ -58,10 +60,12 @@ fs.readdir('./', (err, files) => {
           'zzzax'
         ]
       }
-      
     })
-    .catch(reject);
+    
   })
+  
+  let result = await promise; 
+  console.log(result);
   }
   start();
     //end check commit
