@@ -10,12 +10,12 @@ fs.readdir('./', (err, files) => {
   else {
     for(let i = 0; i < files.length; i++)
       console.log(files[i]);
-    const includesReadme = files.includes('Readme.md');
+    const includesReadme = files.includes('README.md');
 
     if(includesReadme){
 
       console.log("Found readme");
-      fs.readFile('./Readme.md', function (err, data) {
+      fs.readFile('./README.md', function (err, data) {
       //check example
       if(data.includes('Example'))
         console.log("found example");
