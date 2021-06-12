@@ -85,7 +85,7 @@ fs.readdir('./', (err, files) => {
       return "error";
     }
 }
-  console.log(`${result} repos found.`);
+ // console.log(`${result} repos found.`);
   console.log(start());
     //end check commit
     
