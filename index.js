@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 const filePath = core.getInput('path')
-const Octokit = require("@octokit/rest");
+const octokit = require('@octokit/core');
 fs.readdir('./', (err, files) => {
   console.log("entered");
   if (err)
