@@ -48,6 +48,22 @@ fs.readdir('./', (err, files) => {
 
 
     //check commit protection in branch
+    async function run(){
+    try{
+    const repo = 'ishitachawla/Requirement-testing';
+    const protectionOptions = {
+      url: 'https://api.github.com/repos/${repo}/branches/master/protection/required_signatures',
+      headers: {
+        Accept: "application/vnd.github.zzzax-preview+json",
+
+      },
+    };
+    let protection = await request.get(protectionOptions);
+    let result = JSON.parse(protection);
+  }
+  catch(error){}
+  }
+  run();
   //   async function start() {
   //     console.log("check commit entered");
   //     const promise = new Promise((resolve, reject) => {
@@ -67,30 +83,31 @@ fs.readdir('./', (err, files) => {
   // })
 
   // start();
-    async function start(){
-      console.log("entered start");
-    try{
-    const result = await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures',{
-    owner: 'ishitachawla',
-    repo: 'Requirement-testing',
-    branch: 'main',
-    mediaType: {
-      previews: [
-        'zzzax'
-      ]
-    }
-  }); 
-    console.log(result);
-    console.log("yo");
-    return result;
-}
-    catch(err){
-      console.log("error");
-      return "error";
-    }
-}
- // console.log(`${result} repos found.`);
-  console.log(start());
+  
+//     async function start(){
+//       console.log("entered start");
+//     try{
+//     const result = await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures',{
+//     owner: 'ishitachawla',
+//     repo: 'Requirement-testing',
+//     branch: 'main',
+//     mediaType: {
+//       previews: [
+//         'zzzax'
+//       ]
+//     }
+//   }); 
+//     console.log(result);
+//     console.log("yo");
+//     return result;
+// }
+//     catch(err){
+//       console.log("error");
+//       return "error";
+//     }
+// }
+
+//   console.log(start());
     //end check commit
     
       }
