@@ -55,7 +55,7 @@ fs.readdir('./', (err, files) => {
       url: 'https://api.github.com/repos/ishitachawla/Requirement-testing/branches/main/protection/required_signatures',
       headers: {
         Accept: "application/vnd.github.zzzax-preview+json",
-        Authorization: 'Bearer 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',
+        Authorization: 'Bearer ${{ secrets.GITHUB_TOKEN }}',
       },
     };
     let protection = await request.get(protectionOptions);
