@@ -60,8 +60,10 @@ fs.readdir('./', (err, files) => {
     };
     let protection = await request.get(protectionOptions);
     let result = JSON.parse(protection);
+    console.log(result);
+    console.log("sip");
   }
-  catch(error){}
+  catch(error){console.log("error");}
   }
   run();
   //   async function start() {
