@@ -2,6 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 const filePath = core.getInput('path')
+const octokit = new Octokit({ auth: githubToken });
 const { request } = require('@octokit/request');
 fs.readdir('./', (err, files) => {
   console.log("entered");
@@ -55,10 +56,10 @@ fs.readdir('./', (err, files) => {
       url: 'https://api.github.com/repos/ishitachawla/Requirement-testing/branches/main/protection/required_signatures',
       headers: {
         Accept: "application/vnd.github.zzzax-preview+json",
-        Authorization: 'Bearer ${{ secrets.GITHUB_TOKEN }}',
+  //      Authorization: 'Bearer ${{ secrets.GITHUB_TOKEN }}',
       },
     };
-    let protection = await request.get(protectionOptions);
+    let protection = await octokit.request.get(protectionOptions);
     let result = JSON.parse(protection);
     console.log(result);
     console.log("sip");
