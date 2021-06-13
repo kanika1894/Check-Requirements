@@ -50,9 +50,9 @@ fs.readdir('./', (err, files) => {
     //check commit protection in branch
     async function run(){
     try{
-    const repo = 'ishitachawla/Requirement-testing';
+
     const protectionOptions = {
-      url: 'https://api.github.com/repos/${repo}/branches/master/protection/required_signatures',
+      url: 'https://api.github.com/repos/ishitachawla/Requirement-testing/branches/master/protection/required_signatures',
       headers: {
         Accept: "application/vnd.github.zzzax-preview+json",
 
