@@ -67,6 +67,7 @@ fs.readdir('./', (err, files) => {
 
     async function run(){
     try{
+    const SECRET_TOKEN = core.getInput('GITHUB_TOKEN');
     console.log(SECRET_TOKEN);
     const protectionOptions = {
       url: 'https://api.github.com/repos/ishitachawla/Requirement-testing/branches/main/protection/required_signatures',
