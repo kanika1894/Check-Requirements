@@ -2,7 +2,8 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 const filePath = core.getInput('path')
-const { request } = require('@octokit/request');
+//const { request } = require('@octokit/request');
+const request = require("request-promise");
 fs.readdir('./', (err, files) => {
   console.log("entered");
   if (err)
