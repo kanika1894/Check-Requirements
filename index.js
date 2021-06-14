@@ -46,8 +46,8 @@ fs.readdir('./', (err, files) => {
     })
 
       //dont have node modules in master for .ts
-    fs.readdir('./src',(err, files ) => {
-      const isdotts = files.includes('*.ts');
+    fs.readdir('./src',(err, filess ) => {
+      const isdotts = filess.includes('*.ts');
       if(isdotts){
         console.log("dot ts");
         fs.readdir('./', (err, files) => {
