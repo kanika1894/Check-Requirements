@@ -111,7 +111,7 @@ fs.readdir('./', (err, files) => {
 
   // start();
   
-    async function start(){
+    async function start(){ 
       console.log("entered start");
     try{
     const SECRET_TOKEN = core.getInput('GITHUB_TOKEN');
@@ -136,9 +136,10 @@ fs.readdir('./', (err, files) => {
       return "error";
 }
 
-  console.log(start());
+
     //end check commit
     
       }
+      start();
     
     }})
