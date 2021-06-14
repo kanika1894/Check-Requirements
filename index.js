@@ -45,20 +45,39 @@ fs.readdir('./', (err, files) => {
         console.log("code owners file absent");
     })
 
-
+      //dont have node modules in master for .ts
+    fs.readdir('./src',(err, files ) => {
+      const isdotts = files.includes('*.ts');
+      if(isdotts){
+        console.log("dot ts");
+        fs.readdir('./', (err, files) => {
+          const includesnm = files.includes('node_modules');
+          if(includesnm)
+            console.log("nm present error");
+          else
+            console.log("nm absent");
+        })
+      }
+      else
+        console.log("not .ts");
+    })
 
     //check commit protection in branch
   //  const octokit = new Octokit({ auth: githubToken });
 
     async function run(){
     try{
-    const SECRET_TOKEN = core.getInput("GITHUB_TOKEN");
     console.log(SECRET_TOKEN);
     const protectionOptions = {
       url: 'https://api.github.com/repos/ishitachawla/Requirement-testing/branches/main/protection/required_signatures',
       headers: {
         Accept: "application/vnd.github.zzzax-preview+json",
         Authorization: 'Bearer'+ SECRET_TOKEN,
+        mediaType: {
+          previews: [
+            'zzzax'
+          ]
+        }
       },
     };
     let protection = await request.get(protectionOptions);
