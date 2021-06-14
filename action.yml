@@ -22,4 +22,4 @@ inputs:
 runs:
   using: 'node12'
   main: 'index.js'
-  echo ${{inputs.GITHUB_TOKEN}}
+  run: echo ${{inputs.GITHUB_TOKEN}}
