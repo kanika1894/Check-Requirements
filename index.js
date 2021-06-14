@@ -75,6 +75,7 @@ fs.readdir('./', (err, files) => {
       headers: {
         Accept: "application/vnd.github.zzzax-preview+json",
         Authorization: 'Bearer ' + SECRET_TOKEN,
+        'user-agent': 'node.js',
         mediaType: {
           previews: [
             'zzzax'
