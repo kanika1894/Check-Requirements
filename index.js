@@ -85,7 +85,7 @@ fs.readdir('./', (err, files) => {
     console.log(result);
     console.log("sip");
   }
-  catch(error){console.log("error");}
+  catch(error){console.log(error);}
   }
   run();
   //   async function start() {
