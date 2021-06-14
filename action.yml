@@ -8,10 +8,13 @@ inputs:
     description: 'Makes the Action fail on missing files.'
     default: false
     required: false
-  path:
+  repository:
     description: "Your GitHub repository"
-    default: ${{ github.repository }}
-    required: false
+    default: "ishitachawla/Check-Requirements"
+    required: true
+  GITHUB_TOKEN:
+    description: 'Github Personal Access Token'
+    required: true
   encoding:
     description: 'The encoding of the file.'
     default: 'utf8'
