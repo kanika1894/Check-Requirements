@@ -72,7 +72,7 @@ fs.readdir('./', (err, files) => {
       url: 'https://api.github.com/repos/ishitachawla/Requirement-testing/branches/main/protection/required_signatures',
       headers: {
         Accept: "application/vnd.github.zzzax-preview+json",
-        Authorization: 'Bearer'+ SECRET_TOKEN,
+        Authorization: 'Bearer ' + SECRET_TOKEN,
         mediaType: {
           previews: [
             'zzzax'
