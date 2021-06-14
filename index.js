@@ -115,14 +115,14 @@ fs.readdir('./', (err, files) => {
       console.log("entered start");
     try{
     const SECRET_TOKEN = core.getInput('GITHUB_TOKEN');
-   // const regex = /^(.*)github.com:(.*)\/(.*)\.git$/; 
+//    const regex = /^(.*)github.com:(.*)\/(.*)\.git$/; 
     //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
     console.log(SECRET_TOKEN);
     const result = await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures',{
     owner: 'ishitachawla',
     repo: 'Requirement-testing',
     branch: 'main',
-    Authorization: 'Bearer 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',
+    Authorization: 'Bearer ' + SECRET_TOKEN,
     mediaType: {
       previews: [
         'zzzax'
