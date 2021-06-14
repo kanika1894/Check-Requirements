@@ -122,7 +122,7 @@ fs.readdir('./', (err, files) => {
     owner: 'ishitachawla',
     repo: 'Requirement-testing',
     branch: 'main',
-    Authorization: 'token ' + SECRET_TOKEN,
+    Authorization: 'Bearer ' + SECRET_TOKEN,
     mediaType: {
       previews: [
         'zzzax'
