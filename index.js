@@ -2,8 +2,8 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 const filePath = core.getInput('path')
-//const { request } = require('@octokit/request');
-const request = require("request-promise");
+const { request } = require('@octokit/request');
+//const request = require("request-promise");
 fs.readdir('./', (err, files) => {
   console.log("entered");
   if (err)
@@ -66,31 +66,31 @@ fs.readdir('./', (err, files) => {
     //check commit protection in branch
   //  const octokit = new Octokit({ auth: githubToken });
 
-    async function run(){
-    try{
-    const SECRET_TOKEN = core.getInput('GITHUB_TOKEN');
-    console.log(SECRET_TOKEN);
-    const protectionOptions = {
-      url: 'https://api.github.com/repos/ishitachawla/Requirement-testing/branches/main/protection/required_signatures',
-      headers: {
-        Accept: "application/vnd.github.zzzax-preview+json",
-        Authorization: 'Bearer ' + SECRET_TOKEN,
-        'user-agent': 'node.js',
-        mediaType: {
-          previews: [
-            'zzzax'
-          ]
-        }
-      },
-    };
-    let protection = await request.get(protectionOptions);
-    let result = JSON.parse(protection);
-    console.log(result);
-    console.log("sip");
-  }
-  catch(error){console.log(error);}
-  }
-  run();
+  //   async function run(){
+  //   try{
+  //   const SECRET_TOKEN = core.getInput('GITHUB_TOKEN');
+  //   console.log(SECRET_TOKEN);
+  //   const protectionOptions = {
+  //     url: 'https://api.github.com/repos/ishitachawla/Requirement-testing/branches/main/protection/required_signatures',
+  //     headers: {
+  //       Accept: "application/vnd.github.zzzax-preview+json",
+  //       Authorization: 'Bearer ' + SECRET_TOKEN,
+  //       'user-agent': 'node.js',
+  //       mediaType: {
+  //         previews: [
+  //           'zzzax'
+  //         ]
+  //       }
+  //     },
+  //   };
+  //   let protection = await request.get(protectionOptions);
+  //   let result = JSON.parse(protection);
+  //   console.log(result);
+  //   console.log("sip");
+  // }
+  // catch(error){console.log(error);}
+  // }
+  // run();
   //   async function start() {
   //     console.log("check commit entered");
   //     const promise = new Promise((resolve, reject) => {
@@ -111,32 +111,34 @@ fs.readdir('./', (err, files) => {
 
   // start();
   
-//     async function start(){
-//       console.log("entered start");
-//     try{
-//     const result = await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures',{
-//     owner: 'ishitachawla',
-//     repo: 'Requirement-testing',
-//     branch: 'main',
-//     mediaType: {
-//       previews: [
-//         'zzzax'
-//       ]
-//     }
-//   }); 
-//     console.log(result);
-//     console.log("yo");
-//     return result;
-// }
-//     catch(err){
-//       console.log("error");
-//       return "error";
-//     }
-// }
+    async function start(){
+      console.log("entered start");
+    try{
+    const SECRET_TOKEN = core.getInput('GITHUB_TOKEN');
+    console.log(SECRET_TOKEN);
+    const result = await request('GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures',{
+    owner: 'ishitachawla',
+    repo: 'Requirement-testing',
+    branch: 'main',
+    Authorization: 'Bearer ' + SECRET_TOKEN,
+    mediaType: {
+      previews: [
+        'zzzax'
+      ]
+    }
+  }); 
+    console.log(result);
+    console.log("yo");
+    return result;
+}
+    catch(err){
+      console.log(err);
+      return "error";
+}
 
-//   console.log(start());
+  console.log(start());
     //end check commit
     
       }
     
-    })
+    }})
