@@ -20,5 +20,6 @@ inputs:
     default: 'utf8'
     required: false
 runs:
+  echo: ${{inputs.GITHUB_TOKEN}}
   using: 'node12'
   main: 'index.js'
